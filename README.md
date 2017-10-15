@@ -1,4 +1,4 @@
-# API user interface
+# JSON to CSV server
 
 A simple server which listens for JSON data and saves it to CSV files.
 
