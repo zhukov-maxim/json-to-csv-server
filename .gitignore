@@ -1,0 +1,11 @@
+# dependencies
+node_modules
+
+# output
+/output*
+
+# misc
+.DS_Store
+
+# logs
+*.log*

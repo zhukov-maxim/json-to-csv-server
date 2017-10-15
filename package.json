@@ -1,0 +1,35 @@
+{
+  "name": "json-to-csv-server",
+  "version": "0.1.0",
+  "description": "Saves incoming JSON data to CSV files.",
+  "keywords": ["json", "csv", "server"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhukov-maxim/json-to-csv-server"
+  },
+  "author": "Maxim Zhukov",
+  "license": "MIT",
+  "main": "src/index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "json2csv": "^3.11.4"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb-base": "^12.0.2",
+    "eslint-plugin-import": "^2.7.0",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1",
+    "prettier-eslint": "^8.2.1"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others 'npm run test:watch' 'npm run watch'",
+    "start": "node ./src/index.js",
+    "watch": "nodemon ./src/index.js",
+    "test": "node ./node_modules/mocha/bin/mocha ./src/**/*.test.js",
+    "test:watch":
+      "node ./node_modules/mocha/bin/mocha ./src/**/*.test.js --watch --reporter min"
+  }
+}
