@@ -19,6 +19,13 @@ class JsonToCsvServer {
     io.makeDirectory(outputFolder);
 
     this.server = express();
+
+    this.server.use((req, res, next) => {
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+      next();
+    });
+
     this.server.use(bodyParser.json());
 
     this.server.get('/', (req, res) => {
