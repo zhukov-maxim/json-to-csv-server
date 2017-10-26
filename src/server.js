@@ -34,7 +34,11 @@ class JsonToCsvServer {
 
     this.server.post('/', (req, res) => {
       const dataJSON = req.body;
-      const dataCSV = json2csv({ data: dataJSON });
+      const dataCSV = json2csv({
+        data: dataJSON,
+        quotes: '',
+        del: ';',
+      });
 
       const fileName = `${utils.formatDate(new Date())}.csv`;
       const path = `${outputFolder}/${fileName}`;
